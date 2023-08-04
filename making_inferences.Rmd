@@ -1,0 +1,57 @@
+---
+title: "Making Inferences"
+author: "Your name here"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# This is an R code chunk that sets up some default parameters, loads the data,
+# and loads the ggplot library. DO NOT EDIT THIS CODE CHUNK. Whenever you start
+# working on your project, you should use the green play button on the right,
+# to load all the data and settings here.
+knitr::opts_chunk$set(echo = TRUE, fig.height=4)
+load("crimes.RData")
+load("earnings.RData")
+load("movies.RData")
+load("politics.RData")
+load("popularity.RData")
+load("sex.RData")
+load("titanic.RData")
+```
+
+## Instructions
+
+Please do not modify anything above this section, except for your name in the author field at the top.
+
+Follow the instructions on Canvas to create a PDF from this R Markdown file that does several different hypothesis tests. You can use the R code chunks to show your work. Each test should be placed in a separate section with appropriate headers. You can use the template below to get started, but ultimately you should replace everything with the correct values and you should also remove these instructions.
+
+## This is a section header
+
+```{r}
+# This is an R code chunk. The R code here will be written to the output when
+# you knit the document. You can use this code chunk to do the calculations for
+# your test
+tapply(movies$Runtime, movies$Genre, mean)
+mdiff <- 111.91304-90.06475
+mdiff
+tapply(movies$Runtime, movies$Genre, sd)
+table(movies$Genre)
+se <- sqrt(18.349683^2/207+9.344617^2/139)
+se
+tstat <- mdiff/se
+tstat
+2*pt(-tstat, 139-1)
+```
+
+This is some text that you should use to describe your results. Be sure to include:
+
+-   The sample statistic
+-   The standard error for your test
+-   The t-statistic for your test
+-   The p-value for your test (if smaller than 0.0001, report "less than 0.0001")
+-   An interpretation of the p-value in one sentence.
+-   A final decision about your test based on the p-value.
+
+## Another section header for next part
+
+You would put another R code chunk here and description.
