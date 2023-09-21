@@ -1,10 +1,14 @@
 ---
 title: "Making Inferences"
 author: "Your name here"
-output: pdf_document
+format: pdf
+editor: visual
 ---
 
 ```{r setup, include=FALSE}
+#| label: setup
+#| include: false
+
 # This is an R code chunk that sets up some default parameters, loads the data,
 # and loads the ggplot library. DO NOT EDIT THIS CODE CHUNK. Whenever you start
 # working on your project, you should use the green play button on the right,
@@ -23,7 +27,7 @@ load("titanic.RData")
 
 Please do not modify anything above this section, except for your name in the author field at the top.
 
-Follow the instructions on Canvas to create a PDF from this R Markdown file that does several different hypothesis tests. You can use the R code chunks to show your work. Each test should be placed in a separate section with appropriate headers. You can use the template below to get started, but ultimately you should replace everything with the correct values and you should also remove these instructions.
+Follow the instructions on Canvas to create a PDF from this quarto file that does several different hypothesis tests. You can use the R code chunks to show your work. Each test should be placed in a separate section with appropriate headers. You can use the template below to get started, but ultimately you should replace everything with the correct values and you should also remove these instructions.
 
 ## This is a section header
 
@@ -31,16 +35,16 @@ Follow the instructions on Canvas to create a PDF from this R Markdown file that
 # This is an R code chunk. The R code here will be written to the output when
 # you knit the document. You can use this code chunk to do the calculations for
 # your test
-tapply(movies$Runtime, movies$Genre, mean)
-mdiff <- 111.91304-90.06475
+tapply(movies$runtime, movies$genre, mean)
+mdiff <- 114.63260-94.16250
 mdiff
-tapply(movies$Runtime, movies$Genre, sd)
-table(movies$Genre)
-se <- sqrt(18.349683^2/207+9.344617^2/139)
+tapply(movies$runtime, movies$genre, sd)
+table(movies$genre)
+se <- sqrt(19.118726^2/411+8.620464^2/240)
 se
 tstat <- mdiff/se
 tstat
-2*pt(-tstat, 139-1)
+2*pt(-tstat, 240-1)
 ```
 
 This is some text that you should use to describe your results. Be sure to include:
