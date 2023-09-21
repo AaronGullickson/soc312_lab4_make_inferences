@@ -13,7 +13,6 @@ editor: visual
 # and loads the ggplot library. DO NOT EDIT THIS CODE CHUNK. Whenever you start
 # working on your project, you should use the green play button on the right,
 # to load all the data and settings here.
-knitr::opts_chunk$set(echo = TRUE, fig.height=4)
 load("crimes.RData")
 load("earnings.RData")
 load("movies.RData")
